@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         JetBrainsMono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
+      colors: {
+        lemon: "#D7DF00",
+      },
     },
   },
   plugins: [],

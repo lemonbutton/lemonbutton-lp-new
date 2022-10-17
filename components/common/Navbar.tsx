@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <div className="py-8 px-9 flex justify-between items-center pt-8 md:pb-4 md:px-16">
+    <div className="py-8 px-9 flex justify-between items-center pt-8 md:pb-4 md:pt-5 md:px-16">
       <div className="mr-8 cursor-pointer w-[180px] sm:w-auto">
         <Image src={logo} alt="logo" />
       </div>
