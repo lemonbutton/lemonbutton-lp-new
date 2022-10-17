@@ -2,8 +2,17 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Layout } from "../components/common/Layout";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const initWOW = async () => {
+      const WOW = (await import("wow.js")).default;
+      new WOW().init();
+    };
+    initWOW();
+  }, []);
+
   return (
     <>
       <Head>

@@ -38,7 +38,7 @@ const formElements = [
 
 export const ContactForm: React.FC = () => {
   return (
-    <form className="font-JetBrainsMono basis-3/5 flex flex-col gap-5">
+    <form className="font-JetBrainsMono md:basis-3/5 flex flex-col gap-5 wow fadeInRight pt-12 md:pt-0">
       <Header text="Formularz" />
       {formElements.map((element) => (
         <FormInput
@@ -59,7 +59,7 @@ export const ContactForm: React.FC = () => {
         />
       </label>
       <button
-        className="bg-lemon font-bold uppercase py-2 px-3 max-w-fit mt-1"
+        className="bg-lemon font-bold uppercase py-2 px-3 max-w-fit my-8 md:mt-1"
         type="submit"
       >
         <span className="mr-16 text-center">Wyślij wiadomość</span>
