@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className="py-8 px-9 flex justify-between items-center pt-8 md:pb-4 md:pt-5 md:px-16">
+    <div className="py-8 px-9 flex justify-between items-center pt-8 md:pb-4 md:pt-5 md:px-16 z-50">
       <div className="mr-8 cursor-pointer w-[180px] sm:w-auto">
         <Link href="/">
           <Image src={logo} alt="logo" />
@@ -72,7 +72,13 @@ export const Navbar: React.FC = () => {
                   return;
                 }
                 return (
-                  <Link key={link.name + idx} href={link.link}>
+                  <Link
+                    key={link.name + idx}
+                    href={link.link}
+                    className={cs({
+                      "text-lemon": link.link === router.pathname,
+                    })}
+                  >
                     {link.name}
                   </Link>
                 );
