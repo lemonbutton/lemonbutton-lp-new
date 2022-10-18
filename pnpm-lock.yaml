@@ -13,6 +13,7 @@ specifiers:
   postcss: ^8.4.18
   react: 18.2.0
   react-dom: 18.2.0
+  tailwind-hamburgers: ^1.2.2
   tailwindcss: ^3.1.8
   typescript: 4.8.4
   wow.js: ^1.2.2
@@ -23,6 +24,7 @@ dependencies:
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  tailwind-hamburgers: 1.2.2
   wow.js: 1.2.2
 
 devDependencies:
@@ -2042,6 +2044,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /tailwind-hamburgers/1.2.2:
+    resolution: {integrity: sha512-+waFl5H32B7YBOZZADalyxWYFq5qKg2dsqAyqTyMSlwbYFuwD1jhbtw8wSSAK+kU5HpnEhQJV4/V2Gl5cdop4g==}
+    dev: false
 
   /tailwindcss/3.1.8:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
