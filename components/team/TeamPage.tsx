@@ -7,9 +7,9 @@ import img4 from "../../public/team4.png";
 
 export const TeamPage: React.FC = () => {
   return (
-    <div className="md:flex md:h-full">
+    <div className="md:flex md:h-full items-center">
       <TeamInfo />
-      <div className="md:flex-1 md:flex md:pl-6 md:pr-16 px-16 pt-16 md:pt-20">
+      <div className="md:flex-1 md:flex md:pl-6 md:pr-16 px-16 pt-16 md:pt-0">
         <TeamMember
           imgSrc={img1}
           name="Imię nazwisko"

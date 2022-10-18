@@ -10,7 +10,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Navbar />
       <main>
-        <div className="md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden">
+        <div className="md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden flex items-center basis-full">
           {children}
         </div>
       </main>

@@ -18,7 +18,7 @@ export const TeamMember: React.FC<TeamMemberProps> = ({
 }) => {
   return (
     <div className="font-JetBrainsMono basis-1/4 flex flex-col gap-2 md:p-3 pb-16 wow fadeInRight">
-      <Image src={imgSrc} alt={`photo of ${name}`} />
+      <Image src={imgSrc} alt={`photo of ${name}`} width={400} height={400} />
       <p className="font-medium text-2xl uppercase leading-8 pt-2">{name}</p>
       <p className="font-bold text-sm uppercase tracking-[0.15em]">
         {position}
