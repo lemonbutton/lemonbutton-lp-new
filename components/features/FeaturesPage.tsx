@@ -9,21 +9,8 @@ import { FeatureMenu } from "./FeatureMenu";
 import { FeatureSegment } from "./FeatureSegment";
 import { FeatureText } from "./FeatureText";
 
-interface FeaturePageProps {
-  type: "healthcare" | "product";
-}
-
-export const FeaturesPage: React.FC<FeaturePageProps> = ({ type }) => {
+export const FeaturesPage: React.FC = () => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
-
-  const renderMenu = () => {
-    if (type === "healthcare") {
-      return (
-        <FeatureMenu imgSrc={healthcareIcon} header="Healthcare consulting" />
-      );
-    }
-    return <FeatureMenu imgSrc={productIcon} header="Product management" />;
-  };
 
   return (
     <>
