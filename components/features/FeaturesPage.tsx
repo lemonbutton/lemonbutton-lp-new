@@ -7,6 +7,7 @@ import productIcon from "../../public/productIcon.png";
 import { PositionContext } from "../common/Layout";
 import { FeatureMenu } from "./FeatureMenu";
 import { FeatureSegment } from "./FeatureSegment";
+import { FeatureText } from "./FeatureText";
 
 interface FeaturePageProps {
   type: "healthcare" | "product";
@@ -28,7 +29,7 @@ export const FeaturesPage: React.FC<FeaturePageProps> = ({ type }) => {
     <>
       <div
         className={cs(
-          "flex gap-32 px-32 relative transition-all duration-500",
+          "flex flex-col md:flex-row gap-20 md:gap-32 px-8 md:px-32 relative transition-all duration-500",
           {
             "opacity-0": isMovedToLeft,
           }
@@ -50,8 +51,9 @@ export const FeaturesPage: React.FC<FeaturePageProps> = ({ type }) => {
         />
       </div>
       <div
+        id="backButton"
         className={cs(
-          "absolute transition-all xl:right-[-180px] 2xl:right-[-100px] max-w-xl top-12",
+          "absolute transition-all xl:right-[-180px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
           {
             "opacity-0 duration-300": !isMovedToLeft,
             "duration-[800ms]": isMovedToLeft,
@@ -59,19 +61,28 @@ export const FeaturesPage: React.FC<FeaturePageProps> = ({ type }) => {
         )}
       >
         <button
-          className="uppercase font-JetBrainsMono font-bold pb-10"
+          id="backButton"
+          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0"
           onClick={() => moveContainer()}
         >
           <Image src={arrowIcon} alt="arrow icon" />
           <span className="pl-10">Powrót</span>
         </button>
-        <div className="bg-lemon">
+        <div className="bg-lemon z-10">
           {
             <FeatureMenu
               imgSrc={healthcareIcon}
               header="Healthcare consulting"
             />
           }
+        </div>
+        <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
+          <FeatureText />
+        </div>
+      </div>
+      <div className="relative z-0 overflow-hidden invisible md:visible">
+        <div className="fixed top-0 md:w-2/3 h-full">
+          <FeatureText />
         </div>
       </div>
     </>

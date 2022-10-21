@@ -18,11 +18,8 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
   secondParagraph,
 }) => {
   const { moveContainer, isMovedToLeft } = useContext(PositionContext);
-
-  console.log(isMovedToLeft);
-
   return (
-    <div className="font-JetBrainsMono basis-1/2 flex flex-col items-start gap-8">
+    <div className="font-JetBrainsMono basis-1/2 flex flex-col items-start gap-8 wow fadeInRight">
       <Image src={imgSrc} alt="healthcare icon" />
       <p className="uppercase text-4xl font-medium max-w-[20rem] leading-[47px]">
         {header}
@@ -36,7 +33,12 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
       </p>
       <button
         className="font-bold uppercase hover:text-lemon duration-300"
-        onClick={() => moveContainer()}
+        onClick={() => {
+          document
+            .querySelector("#backButton")
+            ?.scrollIntoView({ behavior: "smooth" });
+          moveContainer();
+        }}
       >
         &#8226; <span className="hover:pl-2 duration-100">Zobacz więcej</span>
       </button>

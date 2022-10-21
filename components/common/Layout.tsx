@@ -2,6 +2,7 @@ import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import cs from "classnames";
 import { createContext, useContext, useState } from "react";
+import { FeatureText } from "../features/FeatureText";
 
 interface LayoutProps {
   children: JSX.Element;
@@ -9,6 +10,7 @@ interface LayoutProps {
 
 interface positionContextInterface {
   moveContainer(): void;
+  resetContainer(): void;
   isMovedToLeft: boolean;
 }
 
@@ -21,16 +23,21 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const moveContainer = () => {
     setIsMovedToLeft(!isMovedToLeft);
   };
+  const resetContainer = () => {
+    setIsMovedToLeft(false);
+  };
   return (
     <>
-      <PositionContext.Provider value={{ moveContainer, isMovedToLeft }}>
+      <PositionContext.Provider
+        value={{ moveContainer, resetContainer, isMovedToLeft }}
+      >
         <Navbar />
         <main>
           <div
             className={cs(
-              "md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden flex items-center basis-full transition-all duration-300",
+              "md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden flex items-center basis-full transition-all duration-300 pt-20 md:pt-0",
               {
-                "-translate-x-2/3 overflow-visible": isMovedToLeft,
+                "md:-translate-x-2/3 overflow-visible": isMovedToLeft,
               }
             )}
           >
