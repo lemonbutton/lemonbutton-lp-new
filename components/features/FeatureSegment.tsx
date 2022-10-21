@@ -34,9 +34,11 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
       <button
         className="font-bold uppercase hover:text-lemon duration-300"
         onClick={() => {
-          document
-            .querySelector("#backButton")
-            ?.scrollIntoView({ behavior: "smooth" });
+          if (window.innerWidth <= 768) {
+            document
+              .querySelector("#backButton")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }
           moveContainer();
         }}
       >
