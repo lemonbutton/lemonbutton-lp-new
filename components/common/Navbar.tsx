@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => resetContainer()}
               key={link.name + idx}
-              className="leading-5 uppercase font-JetBrainsMono"
+              className="leading-5 uppercase font-JetBrainsMono font-bold"
             >
               <Link href={link.link}>
                 <li
