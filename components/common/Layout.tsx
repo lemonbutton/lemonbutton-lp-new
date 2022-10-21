@@ -1,8 +1,7 @@
+import cs from "classnames";
+import { createContext, useState } from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
-import cs from "classnames";
-import { createContext, useContext, useState } from "react";
-import { FeatureText } from "../features/FeatureText";
 
 interface LayoutProps {
   children: JSX.Element;
@@ -14,9 +13,7 @@ interface positionContextInterface {
   isMovedToLeft: boolean;
 }
 
-export const PositionContext = createContext<positionContextInterface | null>(
-  null
-);
+export const PositionContext = createContext<any>(null);
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMovedToLeft, setIsMovedToLeft] = useState(false);
