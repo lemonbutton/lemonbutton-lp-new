@@ -2,6 +2,7 @@ import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import img1 from "../../public/mainImage1.png";
+import img2 from "../../public/lemon-hero.png";
 
 export const Homepage: React.FC = () => {
   const { t } = useTranslation("homepage");
@@ -11,6 +12,18 @@ export const Homepage: React.FC = () => {
         <Image
           priority
           src={img1}
+          alt="lemonbutton back logo"
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
+      <div
+        className="h-[250px] md:h-[45%] w-full absolute top-[88px] md:top-40 right-0 left-0 m-auto wow fadeInUp -z-10 pointer-events-none transition-all"
+        data-wow-delay="0.5s"
+      >
+        <Image
+          priority
+          src={img2}
           alt="lemonbutton back logo"
           layout="fill"
           objectFit="contain"
