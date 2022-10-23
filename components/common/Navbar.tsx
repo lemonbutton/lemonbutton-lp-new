@@ -38,7 +38,9 @@ export const Navbar: React.FC = () => {
     <div className="py-4 pt-6 md:py-8 px-9 flex justify-between items-center md:pb-4 md:pt-5 md:px-16 z-50 w-full fixed bg-white md:static md:bg-none">
       <div className="mr-8 cursor-pointer w-[180px] sm:w-auto">
         <Link href="/">
-          <Image src={logo} alt="logo" />
+          <button onClick={() => resetContainer()}>
+            <Image src={logo} alt="logo" />
+          </button>
         </Link>
       </div>
       <div className="flex flex-1 justify-end items-center">
