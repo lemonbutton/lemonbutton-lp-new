@@ -1,8 +1,10 @@
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import img1 from "../../public/mainImage1.png";
 
 export const Homepage: React.FC = () => {
+  const { t } = useTranslation("homepage");
   return (
     <div className="flex gap-12 md:gap-0 flex-col md:flex-row h-full w-full font-JetBrainsMono items-end relative px-10 md:px-24 pb-12 md:pb-24 md:justify-between">
       <div className="h-[300px] md:h-3/5 w-full absolute top-6 md:top-10 right-0 left-0 m-auto wow fadeInUp -z-10 pointer-events-none">

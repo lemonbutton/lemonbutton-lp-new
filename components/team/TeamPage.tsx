@@ -4,8 +4,10 @@ import img1 from "../../public/team1.png";
 import img2 from "../../public/team2.png";
 import img3 from "../../public/team3.png";
 import img4 from "../../public/team4.png";
+import useTranslation from "next-translate/useTranslation";
 
 export const TeamPage: React.FC = () => {
+  const { t } = useTranslation("team");
   return (
     <div className="md:flex md:h-full items-center">
       <TeamInfo />

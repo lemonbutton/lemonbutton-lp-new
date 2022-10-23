@@ -1,0 +1,12 @@
+{
+  "locales": ["pl"],
+  "defaultLocale": "pl",
+  "pages": {
+    "*": ["common"],
+    "/": ["homepage"],
+    "/features": ["features"],
+    "/team": ["team"],
+    "/blog": ["blog"],
+    "/contact": ["contact"]
+  }
+}
