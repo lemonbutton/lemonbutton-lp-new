@@ -3,6 +3,9 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Layout } from "../components/common/Layout";
 import { useEffect } from "react";
+import { initStoryblok } from "../components/common/storyblok";
+
+initStoryblok();
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

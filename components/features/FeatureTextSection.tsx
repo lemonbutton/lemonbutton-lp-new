@@ -12,8 +12,8 @@ export const FeatureTextSection: React.FC<FeatureTextSectionProps> = ({
   id,
 }) => {
   return (
-    <div className="font-JetBrainsMono">
-      <Header id={id} text={header} />
+    <div className="font-JetBrainsMono" id={id}>
+      <Header text={header} />
       <p className="pt-8 text-base">{text}</p>
     </div>
   );

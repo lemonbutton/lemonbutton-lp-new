@@ -1,6 +1,6 @@
 import cs from "classnames";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import arrowIcon from "../../public/arrowLeft.svg";
 import healthcareIcon from "../../public/healthcareIcon.png";
 import productIcon from "../../public/productIcon.png";
@@ -11,6 +11,12 @@ import { FeatureText } from "./FeatureText";
 
 export const FeaturesPage: React.FC = () => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(
+    () => setIsMobileView(window.matchMedia("(max-width: 768px)").matches),
+    []
+  );
 
   return (
     <>
@@ -63,11 +69,13 @@ export const FeaturesPage: React.FC = () => {
             />
           }
         </div>
-        <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
-          <FeatureText />
-        </div>
+        {isMobileView && (
+          <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
+            <FeatureText />
+          </div>
+        )}
       </div>
-      <div className="relative z-0 overflow-hidden invisible md:visible">
+      <div className="relative z-0 hidden md:block">
         <div className="fixed top-0 md:w-2/3 h-full">
           <FeatureText />
         </div>
