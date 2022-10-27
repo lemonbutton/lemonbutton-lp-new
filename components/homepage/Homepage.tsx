@@ -16,11 +16,10 @@ export const Homepage: React.FC = () => {
           layout="fill"
           objectFit="contain"
         />
-        <div
-          className="h-[250px] md:h-[70%] w-full absolute top-0 bottom-0 right-0 left-0 translate-y-12 md:translate-y-8 m-auto wow fadeInUp -z-10 pointer-events-none transition-all"
-          data-wow-delay="0.5s"
-        >
+        <div className="h-[250px] md:h-[70%] w-full absolute top-0 bottom-0 right-0 left-0 translate-y-12 md:translate-y-8 m-auto -z-10 pointer-events-none transition-all">
           <Image
+            className="wow fadeInUp"
+            data-wow-delay="0.5s"
             priority
             src={img2}
             alt="lemonbutton back logo"
