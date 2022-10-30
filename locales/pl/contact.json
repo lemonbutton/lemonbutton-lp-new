@@ -1,1 +1,11 @@
-{}
+{
+  "form": "Formularz",
+  "name_surname": "Imię i nazwisko",
+  "company": "Firma",
+  "email": "Email",
+  "phone": "Telefon",
+  "message": "Wiadomość",
+  "company_data": "Dane firmy",
+  "adress": "Adres",
+  "contact_data": ""
+}

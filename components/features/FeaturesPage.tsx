@@ -1,4 +1,5 @@
 import cs from "classnames";
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import arrowIcon from "../../public/arrowLeft.svg";
@@ -12,6 +13,7 @@ import { FeatureText } from "./FeatureText";
 export const FeaturesPage: React.FC = () => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
   const [isMobileView, setIsMobileView] = useState(false);
+  const { t } = useTranslation("features");
 
   useEffect(
     () => setIsMobileView(window.matchMedia("(max-width: 768px)").matches),
@@ -30,14 +32,14 @@ export const FeaturesPage: React.FC = () => {
       >
         <FeatureSegment
           imgSrc={healthcareIcon}
-          header="Healthcare consulting"
+          header={t("healthcare_consulting")}
           boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           firstParagraph="Ut enim ad minim veniam, excepteur sint occaecat cupidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         />
         <FeatureSegment
           imgSrc={productIcon}
-          header="Product management"
+          header={t("product_management")}
           boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           firstParagraph="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -59,7 +61,7 @@ export const FeaturesPage: React.FC = () => {
           onClick={() => moveContainer()}
         >
           <Image src={arrowIcon} alt="arrow icon" />
-          <span className="pl-10">Powrót</span>
+          <span className="pl-10">{t("button_go_back")}</span>
         </button>
         <div className="bg-lemon z-10">
           {

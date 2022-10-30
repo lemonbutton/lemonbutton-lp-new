@@ -5,34 +5,36 @@ import React, { useContext, useState } from "react";
 import logo from "../../public/logo.svg";
 import cs from "classnames";
 import { PositionContext } from "./Layout";
-
-const links = [
-  {
-    name: "Strona główna",
-    link: "/",
-  },
-  {
-    name: "Usługi",
-    link: "/features",
-  },
-  {
-    name: "Zespół",
-    link: "/team",
-  },
-  {
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    name: "Kontakt",
-    link: "/contact",
-  },
-];
+import useTranslation from "next-translate/useTranslation";
 
 export const Navbar: React.FC = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { resetContainer } = useContext(PositionContext);
+
+  const links = [
+    {
+      name: t("navbar_homepage"),
+      link: "/",
+    },
+    {
+      name: t("navbar_features"),
+      link: "/features",
+    },
+    {
+      name: t("navbar_team"),
+      link: "/team",
+    },
+    {
+      name: t("navbar_blog"),
+      link: "/blog",
+    },
+    {
+      name: t("navbar_contact"),
+      link: "/contact",
+    },
+  ];
 
   return (
     <div className="py-4 pt-6 md:py-8 px-9 flex justify-between items-center md:pb-4 md:pt-5 md:px-16 z-50 w-full fixed bg-white md:static md:bg-none">

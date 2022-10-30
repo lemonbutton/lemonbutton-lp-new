@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import Image, { StaticImageData } from "next/image";
 import { useContext } from "react";
 import { PositionContext } from "../common/Layout";
@@ -18,6 +19,7 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
   secondParagraph,
 }) => {
   const { moveContainer, isMovedToLeft } = useContext(PositionContext);
+  const { t } = useTranslation("features");
   return (
     <div className="font-JetBrainsMono basis-1/2 flex flex-col items-start gap-8 wow fadeInRight">
       <Image src={imgSrc} alt="healthcare icon" />
@@ -42,7 +44,8 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
           moveContainer();
         }}
       >
-        &#8226; <span className="hover:pl-2 duration-100">Zobacz więcej</span>
+        &#8226;{" "}
+        <span className="hover:pl-2 duration-100">{t("button_see_more")}</span>
       </button>
     </div>
   );

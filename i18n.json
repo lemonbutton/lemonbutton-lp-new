@@ -6,7 +6,7 @@
     "/": ["homepage"],
     "/features": ["features"],
     "/team": ["team"],
-    "/blog": ["blog"],
+    "rgx:^/blog": ["blog"],
     "/contact": ["contact"]
   }
 }

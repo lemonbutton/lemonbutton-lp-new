@@ -1,1 +1,7 @@
-{}
+{
+  "blog": "Blog",
+  "button_see_all": "Zobacz wszystkie wpisy",
+  "button_read_article": "Czytaj artykuł",
+  "button_previous_article": "Poprzedni artykuł",
+  "button_next_article": "Następny artykuł"
+}

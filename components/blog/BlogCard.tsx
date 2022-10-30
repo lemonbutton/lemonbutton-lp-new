@@ -1,20 +1,19 @@
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
-import { RichText } from "../common/RichText";
 
 interface BlogCardProps {
   imgSrc: string;
   title: string;
-  content: any;
   blogPostId: string;
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({
   imgSrc,
   title,
-  content,
   blogPostId,
 }) => {
+  const { t } = useTranslation("blog");
   return (
     <div className="font-JetBrainsMono">
       <div className="w-full h-60 relative">
@@ -34,7 +33,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         }}
       >
         <button className="uppercase font-bold hover:text-lemon transition-all duration-200 hover:pl-4 pl-2">
-          &#8226; Czytaj artykuł
+          &#8226; {t("button_read_article")}
         </button>
       </Link>
     </div>

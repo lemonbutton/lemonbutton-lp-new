@@ -32,30 +32,27 @@ export const Homepage: React.FC = () => {
       <div className="pt-72 flex flex-col gap-8">
         <div>
           <p className="uppercase font-medium text-[26px] md:text-5xl md:leading-[63px] wow fadeInUp">
-            Nowa jakość
+            {t("homepage_header_1")}
           </p>
           <p className="uppercase font-medium text-[26px] md:text-5xl md:leading-[63px] wow fadeInUp">
-            W ochronie zdrowia
+            {t("homepage_header_2")}
           </p>
         </div>
         <hr className="border-gray-400 max-w-[8rem] wow fadeInUp" />
-        <p className="md:max-w-[26rem] wow fadeInUp">
-          Innowacyjne podejście w usługach doradczych związanych z jakością w
-          szpitalach oraz lecznictwie otwartym
-        </p>
+        <p className="md:max-w-[26rem] wow fadeInUp">{t("homepage_text")}</p>
       </div>
       <ul className="wow fadeInUp">
         <li className="pb-4 text-end">
           <Link href="/contact">
             <button className="uppercase font-bold hover:text-lemon duration-300">
-              Skontaktuj się z nami &#8226;
+              {t("homepage_button_contact")} &#8226;
             </button>
           </Link>
         </li>
         <li className="text-end">
           <Link href="/features">
             <button className="uppercase font-bold hover:text-lemon duration-300">
-              Nasze projekty &#8226;
+              {t("homepage_button_projects")} &#8226;
             </button>
           </Link>
         </li>

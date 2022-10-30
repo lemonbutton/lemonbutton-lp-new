@@ -1,3 +1,7 @@
 {
-  "test": "Testowanie"
+  "navbar_homepage": "Strona główna",
+  "navbar_features": "Usługi",
+  "navbar_team": "Zespół",
+  "navbar_blog": "Blog",
+  "navbar_contact": "Kontakt"
 }
