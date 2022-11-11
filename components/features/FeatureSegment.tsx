@@ -21,7 +21,7 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
   const { moveContainer, isMovedToLeft } = useContext(PositionContext);
   const { t } = useTranslation("features");
   return (
-    <div className="font-JetBrainsMono basis-1/2 flex flex-col items-start gap-8 wow fadeInRight">
+    <div className="font-JetBrainsMono basis-1/2 flex flex-col items-start gap-8 wow fadeInUp md:fadeInRight">
       <Image src={imgSrc} alt="healthcare icon" />
       <p className="uppercase text-4xl font-medium max-w-[20rem] leading-[47px]">
         {header}
