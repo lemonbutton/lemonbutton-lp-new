@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import img from "../../public/card-image-1.jpg";
 
 interface CaseStudyCardProps {
   imgSrc: StaticImageData;

@@ -25,7 +25,6 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         />
       </div>
       <p className="p-2 text-xl">{title}</p>
-      {/* <RichText document={content} /> */}
       <Link
         href={{
           pathname: "blog/[blogPostId]",
