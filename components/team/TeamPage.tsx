@@ -108,13 +108,13 @@ export const TeamPage: React.FC = () => {
         </div>
         {isMobileView && (
           <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
-            <ActiveTeamMemberText />
+            <ActiveTeamMemberText member={activeMember} />
           </div>
         )}
       </div>
       <div className="relative z-0 hidden md:block">
         <div className="fixed top-0 md:w-2/3 h-full">
-          <ActiveTeamMemberText />
+          <ActiveTeamMemberText member={activeMember} />
         </div>
       </div>
     </>
