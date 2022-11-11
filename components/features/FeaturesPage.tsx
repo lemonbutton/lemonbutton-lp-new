@@ -57,7 +57,7 @@ export const FeaturesPage: React.FC = () => {
       >
         <button
           id="backButton"
-          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0"
+          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0 hover:pl-4 duration-300 transition-all"
           onClick={() => moveContainer()}
         >
           <Image src={arrowIcon} alt="arrow icon" />

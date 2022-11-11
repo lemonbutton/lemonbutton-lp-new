@@ -1,4 +1,5 @@
 import cs from "classnames";
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import arrowIcon from "../../public/arrowLeft.svg";
@@ -12,9 +13,14 @@ import { ActiveTeamMember } from "./ActiveTeamMember";
 import { ActiveTeamMemberText } from "./ActiveTeamMemberText";
 import { TeamInfo } from "./TeamInfo";
 import { TeamMember } from "./TeamMember";
+import { TeamMembers } from "./TeamMembers";
 
 export const TeamPage: React.FC = () => {
+  const { t } = useTranslation("team");
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
+  const [activeMember, setActiveMember] = useState<TeamMembers>(
+    TeamMembers.TEMP1
+  );
   const [isMobileView, setIsMobileView] = useState(false);
   useEffect(
     () => setIsMobileView(window.matchMedia("(max-width: 768px)").matches),
@@ -34,7 +40,10 @@ export const TeamPage: React.FC = () => {
         <TeamInfo />
         <div className="md:flex-1 md:flex md:pl-6 md:pr-16 px-16 pt-16 md:pt-0">
           <TeamMember
-            onClick={() => moveContainer()}
+            onClick={() => {
+              moveContainer();
+              setActiveMember(TeamMembers.TEMP1);
+            }}
             imgSrc={img1}
             name="Imię nazwisko"
             position="Stanowisko"
@@ -42,7 +51,10 @@ export const TeamPage: React.FC = () => {
             phone="+48 123 123 123"
           />
           <TeamMember
-            onClick={() => moveContainer()}
+            onClick={() => {
+              moveContainer();
+              setActiveMember(TeamMembers.TEMP2);
+            }}
             imgSrc={img2}
             name="Imię nazwisko"
             position="Stanowisko"
@@ -50,7 +62,10 @@ export const TeamPage: React.FC = () => {
             phone="+48 123 123 123"
           />
           <TeamMember
-            onClick={() => moveContainer()}
+            onClick={() => {
+              moveContainer();
+              setActiveMember(TeamMembers.TEMP3);
+            }}
             imgSrc={img3}
             name="Imię nazwisko"
             position="Stanowisko"
@@ -58,7 +73,10 @@ export const TeamPage: React.FC = () => {
             phone="+48 123 123 123"
           />
           <TeamMember
-            onClick={() => moveContainer()}
+            onClick={() => {
+              moveContainer();
+              setActiveMember(TeamMembers.TEMP4);
+            }}
             imgSrc={img4}
             name="Imię nazwisko"
             position="Stanowisko"
@@ -79,13 +97,14 @@ export const TeamPage: React.FC = () => {
       >
         <button
           id="backButton"
-          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0"
+          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0 hover:pl-4 duration-300 transition-all"
           onClick={() => moveContainer()}
         >
           <Image src={arrowIcon} alt="arrow icon" />
+          <span className="pl-10">{t("button_go_back")}</span>
         </button>
         <div className="bg-lemon z-10">
-          <ActiveTeamMember name="Imię i nazwisko" phone="+48 123 123 123" />
+          <ActiveTeamMember member={activeMember} />
         </div>
         {isMobileView && (
           <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
