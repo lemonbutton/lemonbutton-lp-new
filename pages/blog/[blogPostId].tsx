@@ -1,5 +1,6 @@
 import { storyblokEditable, useStoryblokState } from "@storyblok/react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { fetchPost } from "../../api/fetchPost";
 import { fetchPosts } from "../../api/fetchPosts";
 import { BlogPost } from "../../components/blog/BlogPost";
@@ -17,13 +18,16 @@ const BlogPostPage: React.FC<BlogPageProps> = ({
   const blok: any = story.content;
 
   return (
-    <div
-      {...storyblokEditable(blok)}
-      key={blok._uid}
-      className="w-full h-full overflow-scroll"
-    >
-      <BlogPost blok={blok} slug={story.slug} slugs={slugs} />
-    </div>
+    <>
+      <NextSeo title={blok.title} />
+      <div
+        {...storyblokEditable(blok)}
+        key={blok._uid}
+        className="w-full h-full overflow-scroll"
+      >
+        <BlogPost blok={blok} slug={story.slug} slugs={slugs} />
+      </div>
+    </>
   );
 };
 

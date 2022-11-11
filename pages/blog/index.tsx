@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { fetchPosts } from "../../api/fetchPosts";
 import { Blog } from "../../components/blog/Blog";
 
@@ -7,7 +8,12 @@ interface BlogPageProps {
 }
 
 const BlogPage: React.FC<BlogPageProps> = ({ stories }) => {
-  return <Blog stories={stories[0]} />;
+  return (
+    <>
+      <NextSeo title="Blog" />
+      <Blog stories={stories[0]} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
