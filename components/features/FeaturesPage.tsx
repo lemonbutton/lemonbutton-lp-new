@@ -1,11 +1,10 @@
 import cs from "classnames";
 import useTranslation from "next-translate/useTranslation";
-import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
-import arrowIcon from "../../public/arrowLeft.svg";
 import healthcareIcon from "../../public/healthcareIcon.png";
 import productIcon from "../../public/productIcon.png";
 import { PositionContext } from "../common/Layout";
+import { MovableContainer } from "../common/MovableContainer";
 import { SideBackButton } from "../common/SideBackButton";
 import { FeatureMenu } from "./FeatureMenu";
 import { FeatureSegment } from "./FeatureSegment";
@@ -23,29 +22,24 @@ export const FeaturesPage: React.FC = () => {
 
   return (
     <>
-      <div
-        className={cs(
-          "flex flex-col md:flex-row gap-20 md:gap-32 px-8 md:px-32 relative transition-all duration-500",
-          {
-            "opacity-0": isMovedToLeft,
-          }
-        )}
-      >
-        <FeatureSegment
-          imgSrc={healthcareIcon}
-          header={t("healthcare_consulting")}
-          boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          firstParagraph="Ut enim ad minim veniam, excepteur sint occaecat cupidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-        <FeatureSegment
-          imgSrc={productIcon}
-          header={t("product_management")}
-          boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          firstParagraph="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-      </div>
+      <MovableContainer className="md:flex-row gap-20 md:gap-32 px-8 md:px-32 relative">
+        <>
+          <FeatureSegment
+            imgSrc={healthcareIcon}
+            header={t("healthcare_consulting")}
+            boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            firstParagraph="Ut enim ad minim veniam, excepteur sint occaecat cupidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          />
+          <FeatureSegment
+            imgSrc={productIcon}
+            header={t("product_management")}
+            boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            firstParagraph="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit sunt in culpa qui officia deserunt mollit anim id est laborum."
+          />
+        </>
+      </MovableContainer>
       <div
         id="backButton"
         className={cs(
