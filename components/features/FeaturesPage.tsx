@@ -48,7 +48,7 @@ export const FeaturesPage: React.FC = () => {
       <div
         id="backButton"
         className={cs(
-          "absolute transition-all xl:right-[-180px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
+          "absolute transition-all md:right-[-180px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
           {
             "opacity-0 duration-300": !isMovedToLeft,
             "duration-[800ms]": isMovedToLeft,

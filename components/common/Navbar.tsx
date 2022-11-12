@@ -72,6 +72,7 @@ export const Navbar: React.FC = () => {
 
         <div className="flex relative lg:hidden">
           <button
+            aria-label="menu"
             onClick={() => setToggleMenu(!toggleMenu)}
             className={cs("tham tham-e-squeeze tham-w-6", {
               "tham-active": toggleMenu,
