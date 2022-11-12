@@ -7,6 +7,7 @@
     "/features": ["features"],
     "/team": ["team"],
     "rgx:^/blog": ["blog"],
-    "/contact": ["contact"]
+    "/contact": ["contact"],
+    "rgx:^/case-studies": ["case-studies"]
   }
 }

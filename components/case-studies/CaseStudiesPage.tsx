@@ -5,9 +5,11 @@ import cs from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { PositionContext } from "../common/Layout";
 import { MovableContainer } from "../common/MovableContainer";
+import useTranslation from "next-translate/useTranslation";
 
 export const CaseStudiesPage: React.FC = () => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
+  const { t } = useTranslation("case-studies");
   const [isMobileView, setIsMobileView] = useState(false);
   useEffect(
     () => setIsMobileView(window.matchMedia("(max-width: 768px)").matches),
@@ -19,13 +21,13 @@ export const CaseStudiesPage: React.FC = () => {
         <>
           <div className="flex flex-col pt-4 lg:pt-0 lg:flex-row justify-start lg:items-end gap-4 md:gap-7">
             <p className="uppercase text-3xl font-medium wow fadeInUp">
-              case studies
+              {t("case_studies")}
             </p>
             <button
               className="uppercase font-bold hover:text-lemon text-start hover:pl-4 transition-all duration-200 wow fadeInUp"
               onClick={() => moveContainer()}
             >
-              &#8226; Zobacz wszystkie case studies
+              &#8226; {t("see_all_studies")}
             </button>
           </div>
           <hr className="w-full border-black wow fadeInUp pb-5 lg:pb-0" />

@@ -45,7 +45,7 @@ export const FeaturesPage: React.FC = () => {
         className={cs(
           "absolute transition-all md:right-[-180px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
           {
-            "opacity-0 duration-300": !isMovedToLeft,
+            "opacity-0 duration-300 md:left-0": !isMovedToLeft,
             "duration-[800ms]": isMovedToLeft,
           }
         )}
