@@ -17,7 +17,7 @@ export const MovableContainer: React.FC<MovableContainerProps> = ({
       className={cs(
         "font-JetBrainsMono flex flex-col transition-all duration-500",
         {
-          "opacity-0": isMovedToLeft,
+          "opacity-0 pointer-events-none": isMovedToLeft,
         },
         className
       )}

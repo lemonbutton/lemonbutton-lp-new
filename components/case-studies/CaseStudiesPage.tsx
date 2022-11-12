@@ -1,11 +1,11 @@
-import { CaseStudyCard } from "./CaseStudyCard";
-import img from "../../public/card-image-1.jpg";
-import { SideBackButton } from "../common/SideBackButton";
 import cs from "classnames";
+import useTranslation from "next-translate/useTranslation";
 import { useContext, useEffect, useState } from "react";
+import img from "../../public/card-image-1.jpg";
+import { HiddenContainer } from "../common/HiddenContainer";
 import { PositionContext } from "../common/Layout";
 import { MovableContainer } from "../common/MovableContainer";
-import useTranslation from "next-translate/useTranslation";
+import { CaseStudyCard } from "./CaseStudyCard";
 
 export const CaseStudiesPage: React.FC = () => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
@@ -55,40 +55,59 @@ export const CaseStudiesPage: React.FC = () => {
           </div>
         </>
       </MovableContainer>
-      <div
-        id="backButton"
-        className={cs(
-          "absolute transition-all md:right-[-80px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0 font-JetBrainsMono",
-          {
-            "opacity-0 duration-300": !isMovedToLeft,
-            "duration-[800ms]": isMovedToLeft,
-          }
-        )}
-      >
-        <SideBackButton />
-        <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] max-w-[28rem]">
-          <p className="uppercase text-4xl font-medium">Blog</p>
-          <div className="border-t-[1px] w-full border-zinc-700"></div>
-          <p>
-            Supidatat non proident, sunt in culpa qui quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-        {isMobileView && (
-          <div
-            className={cs("md:hidden grid grid-cols-1 mt-12 gap-8", {
-              hidden: !isMovedToLeft,
-            })}
-          ></div>
-        )}
-      </div>
+      <HiddenContainer className="md:right-[-80px]">
+        <>
+          <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] max-w-[28rem] font-JetBrainsMono">
+            <p className="uppercase text-4xl font-medium">Blog</p>
+            <div className="border-t-[1px] w-full border-zinc-700"></div>
+            <p>
+              Supidatat non proident, sunt in culpa qui quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+          </div>
+          {isMobileView && (
+            <div
+              className={cs("md:hidden grid grid-cols-1 mt-12 gap-8", {
+                hidden: !isMovedToLeft,
+              })}
+            ></div>
+          )}
+        </>
+      </HiddenContainer>
       <div
         className={cs("relative z-0 hidden md:block", {
           "opacity-0 duration-300": !isMovedToLeft,
           "duration-[800ms]": isMovedToLeft,
         })}
       >
-        <div className="fixed top-0 md:w-2/3 h-full overflow-scroll grid grid-cols-3 pl-32 gap-4 gap-y-12"></div>
+        <div className="fixed top-0 md:w-2/3 h-full overflow-scroll grid grid-cols-3 pl-32 gap-4 gap-y-12 pt-12">
+          <CaseStudyCard
+            imgSrc={img}
+            title="Tytuł zrealizowanego projektu"
+            description="Supidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          />
+          <CaseStudyCard
+            imgSrc={img}
+            title="Tytuł zrealizowanego projektu"
+            description="Supidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          />
+          <CaseStudyCard
+            imgSrc={img}
+            title="Tytuł zrealizowanego projektu"
+            description="Supidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          />
+          <CaseStudyCard
+            imgSrc={img}
+            title="Tytuł zrealizowanego projektu"
+            description="Supidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          />
+          <CaseStudyCard
+            imgSrc={img}
+            title="Tytuł zrealizowanego projektu"
+            description="Supidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          />
+        </div>
       </div>
     </>
   );

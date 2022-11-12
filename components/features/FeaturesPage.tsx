@@ -3,15 +3,15 @@ import useTranslation from "next-translate/useTranslation";
 import { useContext, useEffect, useState } from "react";
 import healthcareIcon from "../../public/healthcareIcon.png";
 import productIcon from "../../public/productIcon.png";
+import { HiddenContainer } from "../common/HiddenContainer";
 import { PositionContext } from "../common/Layout";
 import { MovableContainer } from "../common/MovableContainer";
-import { SideBackButton } from "../common/SideBackButton";
 import { FeatureMenu } from "./FeatureMenu";
 import { FeatureSegment } from "./FeatureSegment";
 import { FeatureText } from "./FeatureText";
 
 export const FeaturesPage: React.FC = () => {
-  const { isMovedToLeft, moveContainer } = useContext(PositionContext);
+  const { isMovedToLeft } = useContext(PositionContext);
   const [isMobileView, setIsMobileView] = useState(false);
   const { t } = useTranslation("features");
 
@@ -40,31 +40,23 @@ export const FeaturesPage: React.FC = () => {
           />
         </>
       </MovableContainer>
-      <div
-        id="backButton"
-        className={cs(
-          "absolute transition-all md:right-[-180px] 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
-          {
-            "opacity-0 duration-300 md:left-0": !isMovedToLeft,
-            "duration-[800ms]": isMovedToLeft,
-          }
-        )}
-      >
-        <SideBackButton />
-        <div className="bg-lemon z-10">
-          {
-            <FeatureMenu
-              imgSrc={healthcareIcon}
-              header="Healthcare consulting"
-            />
-          }
-        </div>
-        {isMobileView && (
-          <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
-            <FeatureText />
+      <HiddenContainer className="md:right-[-180px]">
+        <>
+          <div className="bg-lemon z-10">
+            {
+              <FeatureMenu
+                imgSrc={healthcareIcon}
+                header="Healthcare consulting"
+              />
+            }
           </div>
-        )}
-      </div>
+          {isMobileView && (
+            <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
+              <FeatureText />
+            </div>
+          )}
+        </>
+      </HiddenContainer>
       <div className="relative z-0 hidden md:block">
         <div className="fixed top-0 md:w-2/3 h-full">
           <FeatureText />

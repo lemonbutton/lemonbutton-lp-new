@@ -1,4 +1,3 @@
-import { Header } from "../contact/Header";
 import { FeatureTextSection } from "./FeatureTextSection";
 
 const exampleText =
@@ -6,7 +5,7 @@ const exampleText =
 
 export const FeatureText: React.FC = () => {
   return (
-    <div className="w-full h-full z-0 text-2xl overflow-scroll md:pl-60 md:pr-36 pt-16 md:pt-32 font-JetBrainsMono flex flex-col gap-20">
+    <div className="w-full h-full z-0 text-2xl overflow-scroll md:pl-60 md:pr-36 pt-16 md:pt-12 font-JetBrainsMono flex flex-col gap-20">
       <FeatureTextSection
         id="subpage1"
         header="Subpage numebr 1"
