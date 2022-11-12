@@ -19,7 +19,10 @@ export const Blog: React.FC<BlogParams> = ({ stories }) => {
   );
   return (
     <>
-      <MovableContainer className="w-full h-full pb-6 px-10 md:px-28 gap-3 md:gap-8 lg:pb-0 lg:py-20">
+      <MovableContainer
+        className="w-full h-full pb-6 px-10 md:px-28 gap-3 md:gap-8 lg:pb-0 lg:py-20"
+        flexDirection="col"
+      >
         <>
           <div className="flex flex-col pt-4 lg:pt-10 lg:flex-row justify-start lg:items-end gap-4 md:gap-7">
             <p className="uppercase text-3xl font-medium wow fadeInUp">

@@ -23,7 +23,10 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
   );
   return (
     <>
-      <MovableContainer className="w-full h-full pb-6 px-10 md:px-28 gap-3 md:gap-8 lg:py-20">
+      <MovableContainer
+        className="w-full h-full pb-6 px-10 md:px-28 gap-3 md:gap-8 lg:py-20"
+        flexDirection="col"
+      >
         <>
           <div className="flex flex-col pt-4 lg:pt-0 lg:flex-row justify-start lg:items-end gap-4 md:gap-7">
             <p className="uppercase text-3xl font-medium wow fadeInUp">
@@ -64,7 +67,7 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
       <HiddenContainer className="md:right-[-80px]">
         <>
           <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] max-w-[28rem] font-JetBrainsMono">
-            <p className="uppercase text-4xl font-medium">Blog</p>
+            <p className="uppercase text-4xl font-medium">Case studies</p>
             <div className="border-t-[1px] w-full border-zinc-700"></div>
             <p>
               Supidatat non proident, sunt in culpa qui quis nostrud

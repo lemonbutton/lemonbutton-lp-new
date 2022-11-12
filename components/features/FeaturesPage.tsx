@@ -22,7 +22,10 @@ export const FeaturesPage: React.FC = () => {
 
   return (
     <>
-      <MovableContainer className="md:flex-row gap-20 md:gap-32 px-8 md:px-32 relative">
+      <MovableContainer
+        className="md:flex-row gap-20 md:gap-32 px-8 md:px-32 relative"
+        flexDirection="col"
+      >
         <>
           <FeatureSegment
             imgSrc={healthcareIcon}
