@@ -8,7 +8,7 @@ import img2 from "../../public/team2.png";
 import img3 from "../../public/team3.png";
 import img4 from "../../public/team4.png";
 import { PositionContext } from "../common/Layout";
-import { FeatureText } from "../features/FeatureText";
+import { SideBackButton } from "../common/SideBackButton";
 import { ActiveTeamMember } from "./ActiveTeamMember";
 import { ActiveTeamMemberText } from "./ActiveTeamMemberText";
 import { TeamInfo } from "./TeamInfo";
@@ -95,14 +95,7 @@ export const TeamPage: React.FC = () => {
           }
         )}
       >
-        <button
-          id="backButton"
-          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0 hover:pl-4 duration-300 transition-all"
-          onClick={() => moveContainer()}
-        >
-          <Image src={arrowIcon} alt="arrow icon" />
-          <span className="pl-10">{t("button_go_back")}</span>
-        </button>
+        <SideBackButton />
         <div className="bg-lemon z-10">
           <ActiveTeamMember member={activeMember} />
         </div>

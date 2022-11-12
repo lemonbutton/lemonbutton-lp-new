@@ -6,6 +6,7 @@ import arrowIcon from "../../public/arrowLeft.svg";
 import healthcareIcon from "../../public/healthcareIcon.png";
 import productIcon from "../../public/productIcon.png";
 import { PositionContext } from "../common/Layout";
+import { SideBackButton } from "../common/SideBackButton";
 import { FeatureMenu } from "./FeatureMenu";
 import { FeatureSegment } from "./FeatureSegment";
 import { FeatureText } from "./FeatureText";
@@ -55,14 +56,7 @@ export const FeaturesPage: React.FC = () => {
           }
         )}
       >
-        <button
-          id="backButton"
-          className="uppercase font-JetBrainsMono font-bold pb-6 pt-6 md:pb-10 md:pt-0 hover:pl-4 duration-300 transition-all"
-          onClick={() => moveContainer()}
-        >
-          <Image src={arrowIcon} alt="arrow icon" />
-          <span className="pl-10">{t("button_go_back")}</span>
-        </button>
+        <SideBackButton />
         <div className="bg-lemon z-10">
           {
             <FeatureMenu
