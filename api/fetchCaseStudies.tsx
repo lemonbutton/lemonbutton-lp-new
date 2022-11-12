@@ -1,23 +1,23 @@
 import { getStoryblokApi } from "@storyblok/react";
 import { getContentVersion } from "../lib/storyblok/getContentVersion";
 
-interface FetchPostsParams {
+interface FetchCaseStudiesParams {
   limit?: number;
   page?: number;
 }
 
-export const fetchPosts = async ({
+export const fetchCaseStudies = async ({
   limit,
   page = 1,
-}: FetchPostsParams = {}) => {
+}: FetchCaseStudiesParams = {}) => {
   const storyblokApi = getStoryblokApi();
 
   const { data, ...rest } = await storyblokApi.get(`cdn/stories`, {
-    starts_with: "blog/",
+    starts_with: "casestudies/",
     per_page: limit ?? 16,
     version: getContentVersion(),
     page,
   });
 
-  return { stories: data.stories, totalElements: rest.total };
+  return { caseStudies: data.stories, totalElements: rest.total };
 };

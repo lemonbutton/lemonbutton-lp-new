@@ -7,7 +7,13 @@ import { PositionContext } from "../common/Layout";
 import { MovableContainer } from "../common/MovableContainer";
 import { CaseStudyCard } from "./CaseStudyCard";
 
-export const CaseStudiesPage: React.FC = () => {
+interface CaseStudiesPageProps {
+  caseStudies: any[];
+}
+
+export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
+  caseStudies,
+}) => {
   const { isMovedToLeft, moveContainer } = useContext(PositionContext);
   const { t } = useTranslation("case-studies");
   const [isMobileView, setIsMobileView] = useState(false);
