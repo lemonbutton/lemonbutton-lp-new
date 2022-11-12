@@ -81,7 +81,7 @@ export const Blog: React.FC<BlogParams> = ({ stories }) => {
         )}
       >
         <SideBackButton />
-        <div className="bg-lemon z-10 flex flex-col p-10 pr-24 gap-8 min-h-[28rem] max-w-[28rem]">
+        <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] max-w-[28rem]">
           <p className="uppercase text-4xl font-medium">Blog</p>
           <div className="border-t-[1px] w-full border-zinc-700"></div>
           <p>
@@ -90,7 +90,20 @@ export const Blog: React.FC<BlogParams> = ({ stories }) => {
           </p>
         </div>
         {isMobileView && (
-          <div className={cs("md:hidden", { hidden: !isMovedToLeft })}></div>
+          <div
+            className={cs("md:hidden grid grid-cols-1 mt-12 gap-8", {
+              hidden: !isMovedToLeft,
+            })}
+          >
+            {stories.map((story) => (
+              <BlogCard
+                key={story.uuid}
+                imgSrc={`https:${story.content.image}`}
+                title={story.content.title}
+                blogPostId={story.slug}
+              />
+            ))}
+          </div>
         )}
       </div>
       <div
