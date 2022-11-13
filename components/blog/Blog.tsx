@@ -48,9 +48,9 @@ export const Blog: React.FC<BlogParams> = ({ stories }) => {
           </div>
         </>
       </MovableContainer>
-      <HiddenContainer className="md:right-[-80px]">
+      <HiddenContainer className="md:right-[-80px] 2xl:right-[-40px]">
         <>
-          <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] max-w-[28rem] font-JetBrainsMono">
+          <div className="bg-lemon z-10 flex flex-col p-10 md:pr-24 gap-8 md:min-h-[28rem] 2xl:min-h-[32rem] max-w-[28rem] font-JetBrainsMono">
             <p className="uppercase text-4xl font-medium">Blog</p>
             <div className="border-t-[1px] w-full border-zinc-700"></div>
             <p>

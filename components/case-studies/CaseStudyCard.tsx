@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 interface CaseStudyCardProps {
-  imgSrc: StaticImageData;
+  imgSrc: string;
   title: string;
   description: string;
 }

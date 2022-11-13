@@ -85,8 +85,8 @@ export const ActiveTeamMember: React.FC<ActiveTeamMemberProps> = ({
   };
 
   return (
-    <div className="bg-lemon font-JetBrainsMono flex flex-col gap-4 md:min-w-[30rem] min-h-[20rem] p-10 justify-end relative mt-28  wow fadeInUp">
-      <div className="absolute w-60 h-60 top-[-100px] wow fadeInUp">
+    <div className="bg-lemon font-JetBrainsMono flex flex-col gap-4 md:min-w-[30rem] min-h-[20rem] 2xl:min-h-[28rem] p-10 justify-end relative mt-28  wow fadeInUp">
+      <div className="absolute w-60 h-60 top-[-100px] wow fadeInUp 2xl:w-80 2xl:h-80">
         {renderImage()}
       </div>
       <p className="uppercase font-medium text-2xl md:text-3xl">
