@@ -1,11 +1,11 @@
 import { getContentVersion } from "../lib/storyblok/getContentVersion";
 import { getStoryblokApi } from "@storyblok/react";
 
-interface FetchPostParams {
+interface FetchCaseStudyParams {
   slug: string;
 }
 
-export const fetchPost = async ({ slug }: FetchPostParams) => {
+export const fetchCaseStudy = async ({ slug }: FetchCaseStudyParams) => {
   const storyblokApi = getStoryblokApi();
 
   const { data } = await storyblokApi.get(`cdn/stories/casestudies/${slug}`, {

@@ -44,6 +44,7 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
           <div className="grid-cols-1 lg:grid-cols-4 grid gap-12 lg:gap-4 wow fadeInUp w-full h-full">
             {[...caseStudies].slice(0, 4).map((caseStudy) => (
               <CaseStudyCard
+                slug={caseStudy.slug}
                 key={caseStudy.uuid}
                 title={caseStudy.content.title}
                 imgSrc={`https:${caseStudy.content.image}`}
@@ -82,6 +83,7 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
         <div className="fixed top-0 md:w-2/3 h-full overflow-scroll grid grid-cols-3 pl-32 gap-4 gap-y-12 pt-12">
           {caseStudies.map((caseStudy) => (
             <CaseStudyCard
+              slug={caseStudy.slug}
               key={caseStudy.uuid}
               title={caseStudy.content.title}
               imgSrc={`https:${caseStudy.content.image}`}
