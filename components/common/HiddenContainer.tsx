@@ -19,9 +19,9 @@ export const HiddenContainer: React.FC<HiddenContainerProps> = ({
       className={cs(
         "absolute transition-all 2xl:right-[-100px] md:max-w-xl top-12 p-8 md:p-0",
         {
-          "opacity-0 duration-300 md:left-0 pointer-events-none":
+          "opacity-0 duration-500 -translate-x-full pointer-events-none":
             !isMovedToLeft,
-          "duration-[800ms]": isMovedToLeft,
+          "duration-[800ms] opacity-100": isMovedToLeft,
         },
         className
       )}

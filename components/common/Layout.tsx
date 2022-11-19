@@ -32,7 +32,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main>
           <div
             className={cs(
-              "md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden flex items-center basis-full transition-all duration-300 pt-20 md:pt-0",
+              "md:border md:border-zinc-400 md:mx-16 md:h-[83vh] overflow-hidden flex items-center basis-full transition-all duration-700 pt-20 md:pt-0",
               {
                 "md:-translate-x-2/3 overflow-visible": isMovedToLeft,
               }

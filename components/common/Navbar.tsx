@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
             </div>
           </button>
           {toggleMenu && (
-            <div className="mx-4 cursor-pointer flex justify-end items-end flex-col text-center bg-[#f5f2f2] p-8 absolute top-5 -right-4 mt-4 min-w-[180px] rounded-md shadow-md gap-3">
+            <div className="mx-4 animate-scaleIn cursor-pointer flex justify-end items-end flex-col text-center bg-[#f5f2f2] p-8 absolute top-5 -right-4 mt-4 min-w-[180px] rounded-md shadow-md gap-3">
               {links.map((link, idx) => {
                 if (link.link === "/") {
                   return;
