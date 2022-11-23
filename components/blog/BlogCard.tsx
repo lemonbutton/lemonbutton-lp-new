@@ -1,6 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
+import { PositionContext } from "../common/Layout";
 
 interface BlogCardProps {
   imgSrc: string;
@@ -13,6 +15,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   title,
   blogPostId,
 }) => {
+  const { resetContainer } = useContext(PositionContext);
   const { t } = useTranslation("blog");
   return (
     <div className="font-JetBrainsMono">
@@ -24,15 +27,17 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           alt="blogPost img"
         />
       </div>
-      <p className="p-2 text-xl">{title}</p>
-      {/* <RichText document={content} /> */}
+      <p className="py-2 text-xl">{title}</p>
       <Link
         href={{
           pathname: "blog/[blogPostId]",
           query: { blogPostId: blogPostId ?? "" },
         }}
       >
-        <button className="uppercase font-bold hover:text-lemon transition-all duration-200 hover:pl-4 pl-2">
+        <button
+          className="uppercase font-bold hover:text-lemon transition-all duration-200 hover:pl-2"
+          onClick={() => resetContainer()}
+        >
           &#8226; {t("button_read_article")}
         </button>
       </Link>

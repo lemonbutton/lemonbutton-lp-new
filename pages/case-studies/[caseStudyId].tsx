@@ -1,16 +1,16 @@
 import { storyblokEditable, useStoryblokState } from "@storyblok/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import { fetchPost } from "../../api/fetchPost";
-import { fetchPosts } from "../../api/fetchPosts";
-import { BlogPost } from "../../components/blog/BlogPost";
+import { fetchCaseStudies } from "../../api/fetchCaseStudies";
+import { fetchCaseStudy } from "../../api/fetchCaseStudy";
+import { CaseStudy } from "../../components/case-studies/CaseStudy";
 
-interface BlogPageProps {
+interface CaseStudyPageProps {
   story: any;
   slugs: string[];
 }
 
-const BlogPostPage: React.FC<BlogPageProps> = ({
+const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
   story: initialStory,
   slugs,
 }) => {
@@ -25,21 +25,23 @@ const BlogPostPage: React.FC<BlogPageProps> = ({
         key={blok._uid}
         className="w-full h-full overflow-scroll"
       >
-        <BlogPost blok={blok} slug={story.slug} slugs={slugs} />
+        <CaseStudy blok={blok} slug={story.slug} slugs={slugs} />
       </div>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps<BlogPageProps> = async (ctx) => {
-  const slug = ctx.params?.["blogPostId"] as string;
+export const getStaticProps: GetStaticProps<CaseStudyPageProps> = async (
+  ctx
+) => {
+  const slug = ctx.params?.["caseStudyId"] as string;
   const revalidate = 5 * 60;
 
   try {
-    const data = await fetchPost({ slug });
-    const { stories } = await fetchPosts();
+    const data = await fetchCaseStudy({ slug });
+    const { caseStudies } = await fetchCaseStudies();
 
-    const slugs = stories.map((story: any) => story.slug);
+    const slugs = caseStudies.map((story: any) => story.slug);
 
     return {
       props: { story: data.story, slugs },
@@ -61,4 +63,4 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-export default BlogPostPage;
+export default CaseStudyPage;

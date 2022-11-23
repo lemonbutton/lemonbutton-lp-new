@@ -59,7 +59,7 @@ export const ContactForm: React.FC = () => {
         />
       </label>
       <button
-        className="bg-lemon font-bold uppercase py-2 px-3 w-full md:max-w-fit my-8 md:mt-1"
+        className="bg-lemon font-bold uppercase py-2 px-3 w-full md:max-w-fit my-8 md:mt-1 hover:brightness-90 transition-all duration-300"
         type="submit"
       >
         <span className="mr-16 text-center">Wyślij wiadomość</span>

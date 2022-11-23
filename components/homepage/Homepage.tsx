@@ -15,6 +15,7 @@ export const Homepage: React.FC = () => {
           alt="lemonbutton back logo"
           layout="fill"
           objectFit="contain"
+          placeholder="blur"
         />
         <div className="h-[250px] md:h-[70%] w-full absolute top-0 bottom-0 right-0 left-0 translate-y-12 md:translate-y-8 m-auto -z-10 pointer-events-none transition-all">
           <Image
@@ -25,6 +26,7 @@ export const Homepage: React.FC = () => {
             alt="lemonbutton back logo"
             layout="fill"
             objectFit="contain"
+            placeholder="blur"
           />
         </div>
       </div>
@@ -44,14 +46,20 @@ export const Homepage: React.FC = () => {
       <ul className="wow fadeInUp">
         <li className="pb-4 text-end">
           <Link href="/contact">
-            <button className="uppercase font-bold hover:text-lemon duration-300">
+            <button
+              className="uppercase font-bold hover:text-lemon duration-300"
+              aria-label="contact"
+            >
               {t("homepage_button_contact")} &#8226;
             </button>
           </Link>
         </li>
         <li className="text-end">
           <Link href="/features">
-            <button className="uppercase font-bold hover:text-lemon duration-300">
+            <button
+              className="uppercase font-bold hover:text-lemon duration-300"
+              aria-label="projects"
+            >
               {t("homepage_button_projects")} &#8226;
             </button>
           </Link>

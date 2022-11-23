@@ -3,5 +3,7 @@
   "navbar_features": "Usługi",
   "navbar_team": "Zespół",
   "navbar_blog": "Blog",
-  "navbar_contact": "Kontakt"
+  "navbar_contact": "Kontakt",
+  "case_studies": "Case studies",
+  "button_go_back": "Powrót"
 }
