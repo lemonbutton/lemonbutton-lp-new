@@ -3,20 +3,22 @@ import Image, { StaticImageData } from "next/image";
 import { useContext } from "react";
 import { PositionContext } from "../common/Layout";
 
-interface FeatureSegmentProps {
+interface FeaturePMSegmentProps {
   imgSrc: StaticImageData;
   header: string;
   boldText: string;
   firstParagraph: string;
   secondParagraph: string;
+  onbuttonclick: (state:string) => void;
 }
 
-export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
+export const FeaturePMSegment: React.FC<FeaturePMSegmentProps> = ({
   imgSrc,
   header,
   boldText,
   firstParagraph,
   secondParagraph,
+  onbuttonclick,
 }) => {
   const { moveContainer, isMovedToLeft } = useContext(PositionContext);
   const { t } = useTranslation("features");
@@ -41,6 +43,7 @@ export const FeatureSegment: React.FC<FeatureSegmentProps> = ({
               .querySelector("#backButton")
               ?.scrollIntoView({ behavior: "smooth" });
           }
+          onbuttonclick("PM");
           moveContainer();
         }}
       >

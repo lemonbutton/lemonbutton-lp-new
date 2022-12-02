@@ -6,13 +6,17 @@ import productIcon from "../../public/productIcon.png";
 import { HiddenContainer } from "../common/HiddenContainer";
 import { PositionContext } from "../common/Layout";
 import { MovableContainer } from "../common/MovableContainer";
-import { FeatureMenu } from "./FeatureMenu";
-import { FeatureSegment } from "./FeatureSegment";
-import { FeatureText } from "./FeatureText";
+import { FeatureHCMenu } from "./FeatureHCMenu";
+import { FeaturePMMenu } from "./FeaturePMMenu";
+import { FeatureHCSegment } from "./FeatureHCSegment";
+import { FeaturePMSegment } from "./FeaturePMSegment";
+import { FeatureHCText } from "./FeatureHCText";
+import { FeaturePMText } from "./FeaturePMText";
 
 export const FeaturesPage: React.FC = () => {
   const { isMovedToLeft } = useContext(PositionContext);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [currentView, setIsCurrentView] = useState("HC");
   const { t } = useTranslation("features");
 
   useEffect(
@@ -27,19 +31,21 @@ export const FeaturesPage: React.FC = () => {
         flexDirection="col"
       >
         <>
-          <FeatureSegment
+          <FeatureHCSegment
             imgSrc={healthcareIcon}
             header={t("healthcare_consulting")}
-            boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            firstParagraph="Ut enim ad minim veniam, excepteur sint occaecat cupidatat non proident, sunt in culpa qui quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            boldText={t("hc_bold_text")}
+            firstParagraph={t("hc_first_paragraph")}
+            secondParagraph={t("hc_second_paragraph")}
+            onbuttonclick={setIsCurrentView}
           />
-          <FeatureSegment
+          <FeaturePMSegment
             imgSrc={productIcon}
             header={t("product_management")}
-            boldText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            firstParagraph="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            secondParagraph="Duis aute irure dolor in reprehenderit in voluptate velit sunt in culpa qui officia deserunt mollit anim id est laborum."
+            boldText={t("pm_bold_text")}
+            firstParagraph={t("pm_first_paragraph")}
+            secondParagraph={t("pm_second_paragraph")}
+            onbuttonclick={setIsCurrentView}
           />
         </>
       </MovableContainer>
@@ -47,22 +53,44 @@ export const FeaturesPage: React.FC = () => {
         <>
           <div className="bg-lemon z-10">
             {
-              <FeatureMenu
+              currentView === "HC" && 
+              <FeatureHCMenu
                 imgSrc={healthcareIcon}
                 header="Healthcare consulting"
+              />
+            }
+            {
+              currentView === "PM" && 
+              <FeaturePMMenu
+                imgSrc={productIcon}
+                header="Product Managemnt"
               />
             }
           </div>
           {isMobileView && (
             <div className={cs("md:hidden", { hidden: !isMovedToLeft })}>
-              <FeatureText />
+              {
+                currentView === "HC" && 
+                <FeatureHCText />
+              }
+              {
+                currentView === "PM" && 
+                <FeaturePMText />
+              }
             </div>
           )}
         </>
       </HiddenContainer>
       <div className="relative z-0 hidden md:block">
         <div className="fixed top-0 md:w-2/3 h-full">
-          <FeatureText />
+        {
+                currentView === "HC" && 
+                <FeatureHCText />
+              }
+              {
+                currentView === "PM" && 
+                <FeaturePMText />
+              }
         </div>
       </div>
     </>

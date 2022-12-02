@@ -1,12 +1,12 @@
 import { Header } from "../contact/Header";
 
-interface FeatureTextSectionProps {
+interface FeatureHCTextSectionProps {
   header: string;
   text: string;
   id: string;
 }
 
-export const FeatureTextSection: React.FC<FeatureTextSectionProps> = ({
+export const FeatureHCTextSection: React.FC<FeatureHCTextSectionProps> = ({
   header,
   text,
   id,

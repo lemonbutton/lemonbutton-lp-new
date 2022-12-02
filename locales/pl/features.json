@@ -2,5 +2,26 @@
   "healthcare_consulting": "Healthcare consulting",
   "product_management": "Product management",
   "button_see_more": "Zobacz więcej",
-  "button_go_back": "Powrót"
+  "button_go_back": "Powrót",
+  "hc_bold_text": "Poznaj naszą ofertę w zakresie usług doradczych w ochronie zdrowia.",
+  "hc_first_paragraph": "Począwszy od kompleksowego wparcia budowy systemu zarządzania jakością, przez audyty dokumentacji medycznej, przygotowania do akredytacji, raporty działalności klinicznej, audyty systemów medycznych, aż po wsparcie w zakresie pozyskania i rozliczania funduszy.",
+  "hc_second_paragraph": "Nasz doświadczony, multidyscyplinarny zespół ekspertów, zapewni unikalne wsparcie niezbędne do tworzenia i optymalizacji procesów operacyjnych i poprawy jakości opieki.",
+  "pm_bold_text": "Poznaj naszą ofertę w zakresie usług IT.",
+  "pm_first_paragraph": "Pierwszy akapit IT.",
+  "pm_second_paragraph": "Drugi akapit IT.",
+  "hc_subpage_title_one": "Jakość i akredytacja",
+  "hc_subpage_title_two": "Dokumentacja medyczna",
+  "hc_subpage_title_three": "Audyty",
+  "hc_subpage_title_four": "Fundusze dla ochrony zdrowia",
+  "pm_subpage_title_one": "MVP pod klucz",
+  "pm_subpage_title_two": "Zespoły projektowe",
+  "hc_subpage_title_one_text": "Jakość i akredytacja"
+  
+  
+
+
+
+
+
+  
 }

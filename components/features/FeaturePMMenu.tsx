@@ -1,18 +1,22 @@
 import Image, { StaticImageData } from "next/image";
+import useTranslation from "next-translate/useTranslation";
 
-interface FeatureMenuProps {
+interface FeaturePMMenuProps {
   imgSrc: StaticImageData;
   header: string;
 }
 
-const listElements = [
-  { title: "Subpage number 1", id: "#subpage1" },
-  { title: "Subpage number 2 with some long, and long name", id: "#subpage2" },
-  { title: "dolore sit elit magna validatun", id: "#subpage3" },
-  { title: "Subpage nr 4", id: "#subpage4" },
-];
 
-export const FeatureMenu: React.FC<FeatureMenuProps> = ({ imgSrc, header }) => {
+export const FeaturePMMenu: React.FC<FeaturePMMenuProps> = ({ imgSrc, header }) => {
+
+  const { t } = useTranslation("features");
+  const listElements = [
+  
+    { title: t("pm_subpage_title_one"), id: "#subpage1" },
+    { title: t("pm_subpage_title_two"), id: "#subpage2" },
+    { title: t("pm_subpage_title_three"), id: "#subpage3" },
+    { title: t("pm_subpage_title_four"), id: "#subpage4" },
+  ];
   return (
     <div
       id="header"
