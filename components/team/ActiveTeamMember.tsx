@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MemberContact } from "./MemberContact";
-import img1 from "../../public/team1.png";
+import img1 from "../../public/aga.webp";
 import img2 from "../../public/team2.png";
 import img3 from "../../public/team3.png";
 import img4 from "../../public/team4.png";

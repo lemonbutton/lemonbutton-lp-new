@@ -1,7 +1,7 @@
 import cs from "classnames";
 import useTranslation from "next-translate/useTranslation";
 import { useContext, useEffect, useState } from "react";
-import img1 from "../../public/team1.png";
+import img1 from "../../public/aga.webp";
 import img2 from "../../public/team2.png";
 import img3 from "../../public/team3.png";
 import img4 from "../../public/team4.png";
@@ -38,8 +38,8 @@ export const TeamPage: React.FC = () => {
                 setActiveMember(TeamMembers.TEMP1);
               }}
               imgSrc={img1}
-              name="Imię nazwisko"
-              position="Stanowisko"
+              name="Agnieszka Leś"
+              position=""
               info="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
               phone="+48 123 123 123"
             />
