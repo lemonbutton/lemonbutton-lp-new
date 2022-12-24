@@ -1,5 +1,6 @@
 import cs from "classnames";
-import { createContext, useState } from "react";
+import { useRouter } from "next/router";
+import { createContext, useEffect, useRef, useState } from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
@@ -16,6 +17,28 @@ interface positionContextInterface {
 export const PositionContext = createContext<any>(null);
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const containerRef = useRef(null);
+  const router = useRouter();
+  const callbackFunction = () => {
+    router.push("/features");
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    });
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [containerRef]);
   const [isMovedToLeft, setIsMovedToLeft] = useState(false);
   const moveContainer = () => {
     setIsMovedToLeft(!isMovedToLeft);
@@ -42,6 +65,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </main>
         <Footer />
+        <div className="h-[1px]" ref={containerRef}></div>
       </PositionContext.Provider>
     </>
   );

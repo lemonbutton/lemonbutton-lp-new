@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import img1 from "../../public/mainImage1.png";
 import img2 from "../../public/lemon-hero.png";
+import { useEffect, useRef } from "react";
 
 export const Homepage: React.FC = () => {
   const { t } = useTranslation("homepage");
