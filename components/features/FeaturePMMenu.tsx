@@ -17,6 +17,7 @@ export const FeaturePMMenu: React.FC<FeaturePMMenuProps> = ({
     { title: t("pm_subpage_title_three"), id: "#subpage3" },
     { title: t("pm_subpage_title_four"), id: "#subpage4" },
   ];
+
   return (
     <div
       id="header"
