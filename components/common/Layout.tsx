@@ -20,7 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const containerRef = useRef(null);
   const router = useRouter();
   const callbackFunction = () => {
-    router.push("/features");
+    
   };
 
   useEffect(() => {

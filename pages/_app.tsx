@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NextSeo
         titleTemplate="Lemonbutton | %s"
         defaultTitle="Lemonbutton"
-        description="Page dedicated to lemonbutton"
+        description="This is the Lemonbutton landing page."
       />
       <Head>
         <link rel="icon" href="/favicon.ico" />
